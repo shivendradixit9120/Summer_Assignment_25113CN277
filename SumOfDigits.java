@@ -1,21 +1,15 @@
-
-
 public class SumOfDigits {
+
+    static int sumOfDigits(int n) {
+        if (n == 0)
+            return 0;
+
+        return (n % 10) + sumOfDigits(n / 10);
+    }
+
     public static void main(String[] args) {
+        int num = 12345;
 
-        Scanner sc = new Scanner(System.in);
-
-        System.out.print("Enter a number: ");
-        int num = sc.nextInt();
-
-        int sum = 0;
-
-        while (num > 0) {
-            int digit = num % 10; // get last digit
-            sum = sum + digit;    // add digit to sum
-            num = num / 10;       // remove last digit
-        }
-
-        System.out.println("Sum of digits = " + sum);
+        System.out.println("Sum of digits = " + sumOfDigits(num));
     }
 }
